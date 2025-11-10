@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.IMU;
 
 import org.firstinspires.ftc.robotcore.external.navigation.Pose3D;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
-
+// Pipeline 3
 public class apriltag extends OpMode {
     private Limelight3A limelight3A;
     private IMU imu;
@@ -16,7 +16,7 @@ public class apriltag extends OpMode {
     @Override
     public void init() {
         limelight3A= hardwareMap.get(Limelight3A.class,"limelight");
-        limelight3A.pipelineSwitch(3);
+        limelight3A.pipelineSwitch(8);
         imu = hardwareMap.get(IMU.class, "imu");
        RevHubOrientationOnRobot revHubOrientationOnRobot= new RevHubOrientationOnRobot(RevHubOrientationOnRobot.LogoFacingDirection.UP, RevHubOrientationOnRobot.UsbFacingDirection.FORWARD);
        imu.initialize(new IMU.Parameters(revHubOrientationOnRobot));

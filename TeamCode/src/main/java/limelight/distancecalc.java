@@ -19,7 +19,7 @@ public class distancecalc extends OpMode {
     @Override
     public void init() {
         limelight3A= hardwareMap.get(Limelight3A.class,"limelight");
-        limelight3A.pipelineSwitch(3);
+        limelight3A.pipelineSwitch(8);
         imu = hardwareMap.get(IMU.class, "imu");
         RevHubOrientationOnRobot revHubOrientationOnRobot= new RevHubOrientationOnRobot(RevHubOrientationOnRobot.LogoFacingDirection.UP, RevHubOrientationOnRobot.UsbFacingDirection.FORWARD);
         imu.initialize(new IMU.Parameters(revHubOrientationOnRobot));
