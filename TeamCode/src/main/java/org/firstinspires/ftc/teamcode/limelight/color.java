@@ -1,4 +1,4 @@
-package limelight;
+package org.firstinspires.ftc.teamcode.limelight;
 // Specials thanks to Brogan M. Pratt for his helpful yt videos
 import com.qualcomm.hardware.limelightvision.LLResult;
 import com.qualcomm.hardware.limelightvision.Limelight3A;
@@ -9,7 +9,7 @@ public class color extends OpMode {
     private Limelight3A limelight3A;
     @Override
     public void init() {
-        limelight3A= hardwareMap.get(Limelight3A.class,"limelight");
+        limelight3A= hardwareMap.get(Limelight3A.class, "org/firstinspires/ftc/teamcode/limelight");
         limelight3A.pipelineSwitch(0);
 
     }

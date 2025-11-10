@@ -1,7 +1,5 @@
-package limelight;
+package org.firstinspires.ftc.teamcode.limelight;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
 // We will need to change this a bit based on the orientation of our limelight
 import com.qualcomm.hardware.limelightvision.LLResult;
 import com.qualcomm.hardware.limelightvision.Limelight3A;
@@ -18,7 +16,7 @@ public class distancecalc extends OpMode {
 
     @Override
     public void init() {
-        limelight3A= hardwareMap.get(Limelight3A.class,"limelight");
+        limelight3A= hardwareMap.get(Limelight3A.class, "org/firstinspires/ftc/teamcode/limelight");
         limelight3A.pipelineSwitch(8);
         imu = hardwareMap.get(IMU.class, "imu");
         RevHubOrientationOnRobot revHubOrientationOnRobot= new RevHubOrientationOnRobot(RevHubOrientationOnRobot.LogoFacingDirection.UP, RevHubOrientationOnRobot.UsbFacingDirection.FORWARD);
