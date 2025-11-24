@@ -10,10 +10,11 @@ import org.firstinspires.ftc.robotcore.external.navigation.Pose3D;
 import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
-@TeleOp(name = "AprilTag Detection", group = "Limelight")
+@TeleOp(name = "AprilTag Detection", group = "Opmode")
 public class Apriltag_detection extends OpMode {
 
     private Limelight3A limelight3A;
+
     private IMU imu;
 
     @Override
@@ -24,7 +25,7 @@ public class Apriltag_detection extends OpMode {
         limelight3A = hardwareMap.get(Limelight3A.class, "limelight");
 
         // Correct form (SDK 9.0+)
-        limelight3A.pipelineSwitch(8);
+        limelight3A.pipelineSwitch(1);
 
         imu = hardwareMap.get(IMU.class, "imu");
         RevHubOrientationOnRobot revHubOrientationOnRobot = new RevHubOrientationOnRobot(
@@ -52,20 +53,17 @@ public class Apriltag_detection extends OpMode {
         LLResult result = limelight3A.getLatestResult();
 
         if (result != null && result.isValid()) {
-
-            Pose3D botPose = result.getBotpose_MT2();
-
             telemetry.addData("Status", "Target Found");
             telemetry.addData("tx", result.getTx());
             telemetry.addData("ty", result.getTy());
             telemetry.addData("ta", result.getTa());
 
-            if (botPose != null) {
-                telemetry.addData("Bot X", botPose.getPosition().x);
-                telemetry.addData("Bot Y", botPose.getPosition().y);
-                telemetry.addData("Bot Z", botPose.getPosition().z);
-                telemetry.addData("Bot Yaw", botPose.getOrientation().getYaw());
-            }
+//            if (botPose != null) {
+//                telemetry.addData("Bot X", botPose.getPosition().x);
+//                telemetry.addData("Bot Y", botPose.getPosition().y);
+//                telemetry.addData("Bot Z", botPose.getPosition().z);
+//                telemetry.addData("Bot Yaw", botPose.getOrientation().getYaw());
+//            }
 
         } else {
             telemetry.addData("Status", "No Target");
